@@ -29,9 +29,9 @@ VAR_3=""       # variable with empty default
 the generated Jinja2 template will be:
 
 ```
-VAR_1="{{ env.VAR_1 }}"
-VAR_2="{{ env.VAR_2 | default("default") | quote }}"
-VAR_3="{{ env.VAR_3 | default("") | quote }}"
+VAR_1={{ env.VAR_1 | string | quote }}
+VAR_2={{ env.VAR_2 | default("default") | string | quote }}
+VAR_3={{ env.VAR_3 | default("") | string | quote }}
 ```
 
 See comments [./library/parse_dotenv_sample.py](./library/parse_dotenv_sample.py) for details.
