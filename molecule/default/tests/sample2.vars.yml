@@ -1,0 +1,17 @@
+---
+APP_KEY: supersecret
+
+DB_HOST: localhost
+DB_PORT: 3306
+DB_DATABASE: db
+DB_USERNAME: test
+DB_PASSWORD: test
+
+FACEBOOK_ACCESS_TOKEN: olololaf
+FACEBOOK_VERIFY_TOKEN: falololo
+
+PLATFORM_USERNAME: ulalelou
+PLATFORM_PASSWORD: uolelalu
+PLATFORM_CLIENT_ID: man3l3ru
+PLATFORM_CLIENT_SECRET: ur3l3nam
+PLATFORM_BASE_URI: https://example.com/ushahidi

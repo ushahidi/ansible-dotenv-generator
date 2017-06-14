@@ -1,0 +1,33 @@
+---
+dependency:
+  name: galaxy
+driver:
+  name: docker
+lint:
+  name: ansible-lint
+platforms:
+  - name: ansible-dotenv-generator
+    image: molecule_local/ansible-dotenv-generator
+    command: sleep infinity
+    dockerfile: Dockerfile
+    groups:
+      - all
+provisioner:
+  name: ansible
+  group_vars:
+    all:
+      test_files:
+      - file: tests/sample1.env
+        var_file: tests/sample1.vars.yml
+        var: env1
+        dest: /tmp/sample1.out.env
+        result: tests/sample1.result.env    
+      - file: tests/sample2.env
+        var_file: tests/sample2.vars.yml
+        var: env2
+        dest: /tmp/sample2.out.env
+        result: tests/sample2.result.env
+scenario:
+  name: default
+verifier:
+  name: testinfra

@@ -1,0 +1,5 @@
+---
+VAR_NAME_required: required_value
+VAR_NAME_required_2: required_"value"_2
+VAR_NAME_1: value_'optional'_1
+VAR_NAME_2: true
