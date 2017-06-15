@@ -18,6 +18,7 @@
 - name: clean up local temporary file
   file: name={{ local_template.dest }} state=absent
   delegate_to: localhost
+  become: false
 
 - name: clean up remote temporary file
   file: name={{ gen_template.dotenv_template_path }} state=absent
