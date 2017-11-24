@@ -1,6 +1,6 @@
 ---
-- hosts: all
-  
+- name: Converge
+  hosts: all
   pre_tasks:
     - copy: src={{ item.file }} dest=/tmp/{{ item.file | basename() }}
       with_items: "{{ test_files }}"
@@ -14,4 +14,4 @@
         dotenv_sample: /tmp/{{ item.file | basename() }}
         env: "{{ vars[item.var] }}"
         dest: "{{ item.dest }}"
-      with_items: "{{ test_files }}" 
+      with_items: "{{ test_files }}"
