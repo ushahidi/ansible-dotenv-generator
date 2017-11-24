@@ -7,8 +7,10 @@ lint:
   name: yamllint
   enabled: False
 platforms:
-  - name: instance
+  - name: ansible_dotenv_generator_trusty
     image: ubuntu:trusty
+  - name: ansible_dotenv_generator_xenial
+    image: ubuntu:xenial
 provisioner:
   name: ansible
   lint:
