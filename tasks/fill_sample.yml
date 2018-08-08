@@ -3,8 +3,15 @@
   parse_dotenv_sample: dotenv_sample_path="{{ dotenv_sample }}"
   register: gen_template
 
+- name: "Create local temporary directory"
+  tempfile: state=directory suffix=dotenv_tmpl
+  register: local_tmpdir
+  delegate_to: localhost
+  become: false
+
 - name: "Fetch generated template"
-  fetch: src={{ gen_template.dotenv_template_path }} dest="{{ lookup("env","TMPDIR") | default("/tmp") }}/_dotenv_tmpl/"
+  fetch: src={{ gen_template.dotenv_template_path }} dest="{{ local_tmpdir.path }}"
+  flat: yes
   register: local_template
 
 - name: "Copy filled template back to the server"
