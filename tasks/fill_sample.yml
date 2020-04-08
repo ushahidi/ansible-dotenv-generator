@@ -12,7 +12,7 @@
 - name: "Fetch generated template"
   fetch:
     src: "{{ gen_template.dotenv_template_path }}"
-    dest: "{{ local_tmpdir.path }}"
+    dest: "{{ local_tmpdir.path }}/env"
     flat: yes
   register: local_template
 
