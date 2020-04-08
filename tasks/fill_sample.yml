@@ -10,8 +10,10 @@
   become: false
 
 - name: "Fetch generated template"
-  fetch: src={{ gen_template.dotenv_template_path }} dest="{{ local_tmpdir.path }}"
-  flat: yes
+  fetch:
+    src: "{{ gen_template.dotenv_template_path }}"
+    dest: "{{ local_tmpdir.path }}"
+    flat: yes
   register: local_template
 
 - name: "Copy filled template back to the server"
