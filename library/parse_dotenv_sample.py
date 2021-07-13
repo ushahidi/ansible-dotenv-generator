@@ -64,7 +64,7 @@ def main():
     dotenv_template_path = None
     template = _parse_dotenv_sample(module.params['dotenv_sample_path'], module.params['env_dict_varname'])
     with NamedTemporaryFile(delete=False) as f:
-      f.write(template)
+      f.write(template.encode('utf8'))
       dotenv_template_path = f.name
     module.exit_json(changed=True, dotenv_template_path=dotenv_template_path)
   except IOError as err:
