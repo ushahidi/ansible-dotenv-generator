@@ -1,4 +1,0 @@
----
-- name: fill provided sample dotenv file (if provided)
-  include_tasks: fill_sample.yml
-  when: dotenv_sample != ""
