@@ -1,5 +1,0 @@
-.molecule
-*.pyc
-*.retry
-.cache
-
